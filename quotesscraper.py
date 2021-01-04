@@ -7,9 +7,9 @@ def ScrapingQuotes():
     listQuotes = []
     for data in soup.find_all("div", {"class": "quote"}):
         quote = data.find("span", {"class": "text"}).text
-        cleanQuote = quote[1:]
-        cleanQuote = quote[:-1]
-        listQuotes.append(cleanQuote)
+        postfix = quote[1:]
+        prefect = postfix[:-1]
+        listQuotes.append(prefect)
     return listQuotes
 
 
